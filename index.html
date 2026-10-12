@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Co-Parent | Two Homes, One Team</title>
+  <meta name="description" content="A supportive, judgment-free space celebrating healthy co-parenting with empathy, practical tools, product picks, and everyday humor." />
+  <link rel="canonical" href="https://www.thedailycoparent.com/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FFF8EF',
+            sand: '#F6EBDD',
+            terracotta: { DEFAULT: '#D9714E', dark: '#B9573A', soft: '#F9DCCF' },
+            sage: { DEFAULT: '#8BA888', dark: '#5F7F5C', soft: '#E1EBDD' },
+            sky: { warm: '#9CC7DE', soft: '#DDEEF6' },
+            butter: { DEFAULT: '#F5D888', soft: '#FCF1CE' },
+            ink: '#3A2E2A',
+          },
+          boxShadow: {
+            soft: '0 10px 30px -12px rgba(122, 78, 52, 0.25)',
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { background-color: #FFF8EF; color: #3A2E2A; }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; }
+    .fluid-h1 { font-size: clamp(2.25rem, 5.5vw + 0.5rem, 4.5rem); line-height: 1.05; }
+    .fluid-h2 { font-size: clamp(1.75rem, 3vw + 0.75rem, 2.75rem); line-height: 1.15; }
+    .blob { filter: blur(60px); opacity: .55; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .float-slow { animation: floaty 7s ease-in-out infinite; }
+    .float-slower { animation: floaty 9s ease-in-out infinite reverse; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-10px) rotate(var(--r,0deg)); } }
+    .carousel::-webkit-scrollbar { display: none; }
+    .carousel { scrollbar-width: none; }
+    :focus-visible { outline: 3px solid #D9714E; outline-offset: 3px; border-radius: 8px; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .float-slow, .float-slower { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-50 bg-cream/85 backdrop-blur border-b border-terracotta/10">
+    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Main">
+      <a href="#top" class="flex items-center gap-2.5 group">
+        <span class="relative grid place-items-center w-10 h-10 rounded-2xl bg-terracotta text-white shadow-soft group-hover:rotate-6 transition">
+          <i data-lucide="house-heart" class="w-5 h-5"></i>
+        </span>
+        <span class="font-display font-bold text-lg sm:text-xl leading-none">The Daily <span class="text-terracotta">Co-Parent</span></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#stories" class="hover:text-terracotta transition">Daily Stories</a></li>
+        <li><a href="#tips" class="hover:text-terracotta transition">Tips &amp; Tools</a></li>
+        <li><a href="#gear" class="hover:text-terracotta transition">Co-Parent Gear</a></li>
+        <li><a href="#about" class="hover:text-terracotta transition">About Us</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="#newsletter" class="hidden sm:inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-soft transition hover:-translate-y-0.5">
+          Subscribe Free
+        </a>
+        <button id="menuBtn" class="md:hidden grid place-items-center w-10 h-10 rounded-xl hover:bg-sand transition" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-terracotta/10 bg-cream">
+      <ul class="px-5 py-4 space-y-1 text-base font-medium">
+        <li><a href="#stories" class="block py-2.5 px-3 rounded-xl hover:bg-sand">Daily Stories</a></li>
+        <li><a href="#tips" class="block py-2.5 px-3 rounded-xl hover:bg-sand">Tips &amp; Tools</a></li>
+        <li><a href="#gear" class="block py-2.5 px-3 rounded-xl hover:bg-sand">Co-Parent Gear</a></li>
+        <li><a href="#about" class="block py-2.5 px-3 rounded-xl hover:bg-sand">About Us</a></li>
+        <li><a href="#newsletter" class="block text-center mt-2 bg-terracotta text-white font-semibold py-3 rounded-full">Subscribe Free</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden">
+      <div class="blob absolute -top-24 -left-24 w-80 h-80 rounded-full bg-butter" aria-hidden="true"></div>
+      <div class="blob absolute top-40 -right-24 w-96 h-96 rounded-full bg-sky-soft" aria-hidden="true"></div>
+      <div class="blob absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-sage-soft" aria-hidden="true"></div>
+
+      <div class="relative max-w-6xl mx-auto px-5 py-16 sm:py-24 grid lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 bg-white/80 border border-terracotta/20 text-terracotta-dark text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full shadow-soft">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> Judgment-free. Always.
+          </span>
+          <h1 class="fluid-h1 font-bold mt-6">
+            Two Homes, One Team, <span class="text-terracotta">Endless Love</span> <span class="whitespace-nowrap">(and Coffee)</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-ink/75 max-w-xl leading-relaxed">
+            From silly toddler moments to smooth custody handoffs, you're not doing this alone. Pull up a chair: we've got stories, scripts, and sanity-saving tools for the whole shared journey.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#newsletter" class="inline-flex justify-center items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-semibold px-7 py-4 rounded-full shadow-soft transition hover:-translate-y-0.5">
+              <i data-lucide="heart-handshake" class="w-5 h-5"></i> Join the Village
+            </a>
+            <a href="#stories" class="inline-flex justify-center items-center gap-2 bg-white hover:bg-sand border border-ink/10 font-semibold px-7 py-4 rounded-full transition hover:-translate-y-0.5">
+              Explore Recent Posts <i data-lucide="arrow-down" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-ink/60 flex items-center gap-2">
+            <i data-lucide="coffee" class="w-4 h-4 text-terracotta"></i> Weekly. Warm. Under five minutes.
+          </p>
+        </div>
+
+        <!-- Hero visual: two homes + shared heart -->
+        <div class="reveal relative mx-auto w-full max-w-md lg:max-w-none" aria-hidden="true">
+          <div class="relative aspect-square max-w-[30rem] mx-auto">
+            <div class="absolute inset-6 rounded-[3rem] bg-gradient-to-br from-peach-100 via-butter-soft to-sky-soft bg-sand"></div>
+
+            <div class="float-slow absolute left-0 top-8 w-44 sm:w-52 bg-white rounded-3xl shadow-soft p-5" style="--r:-6deg; transform: rotate(-6deg)">
+              <div class="w-11 h-11 rounded-2xl bg-terracotta-soft grid place-items-center text-terracotta"><i data-lucide="home" class="w-6 h-6"></i></div>
+              <p class="font-display font-bold mt-3">Mom's House</p>
+              <p class="text-xs text-ink/60 mt-1">Pancake Mondays</p>
+            </div>
+
+            <div class="float-slower absolute right-0 top-24 w-44 sm:w-52 bg-white rounded-3xl shadow-soft p-5" style="--r:5deg; transform: rotate(5deg)">
+              <div class="w-11 h-11 rounded-2xl bg-sage-soft grid place-items-center text-sage-dark"><i data-lucide="home" class="w-6 h-6"></i></div>
+              <p class="font-display font-bold mt-3">Dad's House</p>
+              <p class="text-xs text-ink/60 mt-1">Dance-party Fridays</p>
+            </div>
+
+            <div class="float-slow absolute left-8 bottom-8 w-52 sm:w-60 bg-white rounded-3xl shadow-soft p-4 flex items-center gap-3" style="--r:-2deg; transform: rotate(-2deg)">
+              <div class="w-10 h-10 rounded-full bg-sky-soft grid place-items-center text-sky-warm shrink-0"><i data-lucide="calendar-check" class="w-5 h-5 text-[#4F8FB0]"></i></div>
+              <div>
+                <p class="text-sm font-semibold leading-tight">Handoff: 5:30 PM</p>
+                <p class="text-xs text-ink/60">Backpack ✓ Lovey ✓</p>
+              </div>
+            </div>
+
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-terracotta text-white grid place-items-center shadow-soft ring-8 ring-white/70">
+              <i data-lucide="heart" class="w-9 h-9 fill-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VALUE PILLARS ============ -->
+    <section id="tips" class="max-w-6xl mx-auto px-5 py-16 sm:py-20 scroll-mt-20">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <h2 class="fluid-h2 font-bold">Everything a modern co-parent needs, in one cozy corner</h2>
+        <p class="mt-4 text-ink/70 text-lg">Real talk, real tools, and a lot of grace.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="reveal group bg-white rounded-3xl p-7 shadow-soft hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-butter-soft grid place-items-center text-[#B88A1E] group-hover:rotate-6 transition"><i data-lucide="smile" class="w-7 h-7"></i></div>
+          <h3 class="font-display font-bold text-xl mt-5">Silly Daily Stories</h3>
+          <p class="mt-2 text-ink/70 leading-relaxed">Relatable, lighthearted moments that remind you that you're not the only one whose kid just announced a school project is due tomorrow.</p>
+        </article>
+
+        <article class="reveal group bg-white rounded-3xl p-7 shadow-soft hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-terracotta-soft grid place-items-center text-terracotta group-hover:rotate-6 transition"><i data-lucide="message-circle-heart" class="w-7 h-7"></i></div>
+          <h3 class="font-display font-bold text-xl mt-5">Practical Tips &amp; Scripts</h3>
+          <p class="mt-2 text-ink/70 leading-relaxed">De-escalation scripts, shared-calendar habits, and custody-transition playbooks you can use today.</p>
+        </article>
+
+        <article id="gear-pillar" class="reveal group bg-white rounded-3xl p-7 shadow-soft hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-sage-soft grid place-items-center text-sage-dark group-hover:rotate-6 transition"><i data-lucide="backpack" class="w-7 h-7"></i></div>
+          <h3 class="font-display font-bold text-xl mt-5">Recommended Gear &amp; Tools</h3>
+          <p class="mt-2 text-ink/70 leading-relaxed">Our favorite two-home essentials: luggage, shared apps, and the duplicates worth buying twice.</p>
+        </article>
+
+        <article class="reveal group bg-white rounded-3xl p-7 shadow-soft hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-sky-soft grid place-items-center text-[#4F8FB0] group-hover:rotate-6 transition"><i data-lucide="users" class="w-7 h-7"></i></div>
+          <h3 class="font-display font-bold text-xl mt-5">Community &amp; Resources</h3>
+          <p class="mt-2 text-ink/70 leading-relaxed">Downloadable handoff checklists, printable calendars, and expert Q&amp;As to keep everyone on the same page.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED ARTICLES ============ -->
+    <section id="stories" class="bg-sand/60 scroll-mt-20">
+      <div class="max-w-6xl mx-auto px-5 py-16 sm:py-20">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 reveal">
+          <div>
+            <p class="text-terracotta font-semibold text-sm tracking-wide uppercase">Fresh from the blog</p>
+            <h2 class="fluid-h2 font-bold mt-2">Stories &amp; ideas worth sharing</h2>
+          </div>
+          <a href="#newsletter" class="inline-flex items-center gap-2 font-semibold text-terracotta-dark hover:gap-3 transition-all">Get them in your inbox <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Article 1 -->
+          <a href="#" class="reveal group bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-1.5 transition duration-300 flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-butter to-terracotta-soft grid place-items-center text-terracotta-dark"><i data-lucide="laugh" class="w-12 h-12 group-hover:scale-110 transition"></i></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center justify-between text-xs">
+                <span class="bg-butter-soft text-[#8A6511] font-semibold px-3 py-1 rounded-full">Humor</span>
+                <span class="text-ink/50 flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 3 min</span>
+              </div>
+              <h3 class="font-display font-bold text-lg mt-4 leading-snug group-hover:text-terracotta transition">The Great Missing-Shoe Mystery of Tuesday Morning</h3>
+              <p class="text-sm text-ink/70 mt-2 leading-relaxed">One shoe at Dad's. One shoe at Mom's. Zero shoes on feet. A love letter to the chaos.</p>
+            </div>
+          </a>
+
+          <!-- Article 2 -->
+          <a href="#" class="reveal group bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-1.5 transition duration-300 flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-sky-warm/60 to-sky-soft grid place-items-center text-[#3F7C9C]"><i data-lucide="messages-square" class="w-12 h-12 group-hover:scale-110 transition"></i></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center justify-between text-xs">
+                <span class="bg-sky-soft text-[#2F6784] font-semibold px-3 py-1 rounded-full">Communication</span>
+                <span class="text-ink/50 flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 6 min</span>
+              </div>
+              <h3 class="font-display font-bold text-lg mt-4 leading-snug group-hover:text-terracotta transition">5 Calm Replies for When a Text Feels Like a Trap</h3>
+              <p class="text-sm text-ink/70 mt-2 leading-relaxed">Short, kind, and kid-focused scripts that keep the peace without keeping score.</p>
+            </div>
+          </a>
+
+          <!-- Article 3 -->
+          <a href="#" class="reveal group bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-1.5 transition duration-300 flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-sage to-sage-soft grid place-items-center text-white"><i data-lucide="package-check" class="w-12 h-12 group-hover:scale-110 transition"></i></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center justify-between text-xs">
+                <span class="bg-sage-soft text-sage-dark font-semibold px-3 py-1 rounded-full">Gear Review</span>
+                <span class="text-ink/50 flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 5 min</span>
+              </div>
+              <h3 class="font-display font-bold text-lg mt-4 leading-snug group-hover:text-terracotta transition">What We Pack (and Don't) for Every Handoff</h3>
+              <p class="text-sm text-ink/70 mt-2 leading-relaxed">The tiny checklist that ended "I left my tablet charger at the other house" forever.</p>
+            </div>
+          </a>
+
+          <!-- Article 4 -->
+          <a href="#" class="reveal group bg-white rounded-3xl overflow-hidden shadow-soft hover:-translate-y-1.5 transition duration-300 flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-terracotta-soft to-terracotta/40 grid place-items-center text-terracotta-dark"><i data-lucide="heart-pulse" class="w-12 h-12 group-hover:scale-110 transition"></i></div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center justify-between text-xs">
+                <span class="bg-terracotta-soft text-terracotta-dark font-semibold px-3 py-1 rounded-full">Wellbeing</span>
+                <span class="text-ink/50 flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 4 min</span>
+              </div>
+              <h3 class="font-display font-bold text-lg mt-4 leading-snug group-hover:text-terracotta transition">Your Quiet Week Is Not Empty. It's Recharging.</h3>
+              <p class="text-sm text-ink/70 mt-2 leading-relaxed">Making peace with the weeks when the house is calm and the heart is a little loud.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT SHOWCASE ============ -->
+    <section id="gear" class="max-w-6xl mx-auto px-5 py-16 sm:py-20 scroll-mt-20">
+      <div class="max-w-2xl reveal">
+        <p class="text-sage-dark font-semibold text-sm tracking-wide uppercase">Co-Parent Gear</p>
+        <h2 class="fluid-h2 font-bold mt-2">Tried, tested, and kid-approved</h2>
+        <p class="mt-3 text-ink/70 text-lg">The two-home essentials we'd happily buy twice.</p>
+      </div>
+
+      <div class="mt-10 carousel flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:overflow-visible">
+        <!-- Product 1 -->
+        <article class="reveal snap-center shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-white rounded-3xl shadow-soft overflow-hidden hover:-translate-y-1.5 transition duration-300 flex flex-col">
+          <div class="relative h-48 bg-gradient-to-br from-terracotta-soft to-butter-soft grid place-items-center text-terracotta-dark">
+            <i data-lucide="luggage" class="w-16 h-16"></i>
+            <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-sage-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-soft"><i data-lucide="badge-check" class="w-4 h-4"></i> Tried &amp; Tested</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display font-bold text-xl">Dual-Home Weekender Bag</h3>
+            <p class="text-sm text-ink/70 mt-2 leading-relaxed flex-1">Roomy, wipe-clean, and kid-sized so they can own the packing. Lives by the front door.</p>
+            <a href="#" class="mt-5 inline-flex items-center justify-center gap-2 bg-ink text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-terracotta transition">See why we love it <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="reveal snap-center shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-white rounded-3xl shadow-soft overflow-hidden hover:-translate-y-1.5 transition duration-300 flex flex-col">
+          <div class="relative h-48 bg-gradient-to-br from-sky-soft to-sage-soft grid place-items-center text-[#3F7C9C]">
+            <i data-lucide="calendar-days" class="w-16 h-16"></i>
+            <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-sage-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-soft"><i data-lucide="badge-check" class="w-4 h-4"></i> Tried &amp; Tested</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display font-bold text-xl">Smart Family Calendar Display</h3>
+            <p class="text-sm text-ink/70 mt-2 leading-relaxed flex-1">One glanceable schedule for both homes, so "whose weekend is it?" gets answered before it's asked.</p>
+            <a href="#" class="mt-5 inline-flex items-center justify-center gap-2 bg-ink text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-terracotta transition">See why we love it <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="reveal snap-center shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-white rounded-3xl shadow-soft overflow-hidden hover:-translate-y-1.5 transition duration-300 flex flex-col">
+          <div class="relative h-48 bg-gradient-to-br from-butter-soft to-sage-soft grid place-items-center text-sage-dark">
+            <i data-lucide="notebook-pen" class="w-16 h-16"></i>
+            <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-sage-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-soft"><i data-lucide="badge-check" class="w-4 h-4"></i> Tried &amp; Tested</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display font-bold text-xl">Shared Journaling Kit</h3>
+            <p class="text-sm text-ink/70 mt-2 leading-relaxed flex-1">A little notebook that travels with the kids, so wins, worries, and "she lost a tooth!" never get lost in transit.</p>
+            <a href="#" class="mt-5 inline-flex items-center justify-center gap-2 bg-ink text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-terracotta transition">See why we love it <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <p class="mt-6 text-xs text-ink/50 max-w-2xl">Heads up: some links may be affiliate links. If you buy through them, we may earn a small commission at no extra cost to you. We only recommend what we'd use ourselves.</p>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section id="newsletter" class="px-5 py-16 sm:py-20 scroll-mt-20">
+      <div class="relative max-w-4xl mx-auto overflow-hidden rounded-[2.5rem] bg-terracotta text-white shadow-soft px-6 sm:px-14 py-14 sm:py-16 text-center reveal">
+        <div class="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-white/10" aria-hidden="true"></div>
+        <div class="absolute -bottom-20 -right-10 w-72 h-72 rounded-full bg-butter/20" aria-hidden="true"></div>
+
+        <div class="relative">
+          <div class="mx-auto w-14 h-14 rounded-2xl bg-white/20 grid place-items-center"><i data-lucide="mail-heart" class="w-7 h-7"></i></div>
+          <h2 class="fluid-h2 font-bold mt-5">Get the Sunday Handoff</h2>
+          <p class="mt-4 text-white/90 text-lg max-w-xl mx-auto leading-relaxed">5-minute actionable tips, silly parenting wins, and sanity-saving tools delivered weekly.</p>
+
+          <form id="newsletterForm" class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-3" novalidate>
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
+              class="flex-1 rounded-full px-6 py-4 text-ink placeholder-ink/40 bg-white focus:outline-none focus:ring-4 focus:ring-butter/70" />
+            <button type="submit" class="rounded-full bg-ink hover:bg-black text-white font-semibold px-7 py-4 transition hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
+              Send Me the Handoff <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+          </form>
+          <p id="formError" class="hidden mt-3 text-sm bg-white/20 rounded-full px-4 py-2 inline-block" role="alert">Hmm, that email looks a little off. Mind checking it?</p>
+
+          <div id="formSuccess" class="hidden max-w-lg mx-auto mt-8 bg-white text-ink rounded-3xl p-7 shadow-soft" role="status" aria-live="polite">
+            <div class="mx-auto w-14 h-14 rounded-full bg-sage-soft grid place-items-center text-sage-dark"><i data-lucide="party-popper" class="w-7 h-7"></i></div>
+            <h3 class="font-display font-bold text-2xl mt-4">Welcome to the family!</h3>
+            <p class="mt-2 text-ink/70">Your first Sunday Handoff is on its way. Go ahead and grab that coffee, you've earned it.</p>
+          </div>
+
+          <p class="mt-6 text-sm text-white/85 flex items-center justify-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> Zero spam. Only judgment-free support. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="max-w-4xl mx-auto px-5 pb-20 scroll-mt-20 text-center reveal">
+      <div class="mx-auto w-14 h-14 rounded-2xl bg-sage-soft grid place-items-center text-sage-dark"><i data-lucide="hand-heart" class="w-7 h-7"></i></div>
+      <h2 class="fluid-h2 font-bold mt-5">Why we're here</h2>
+      <p class="mt-4 text-lg text-ink/75 leading-relaxed">
+        Co-parenting isn't a consolation prize. It's a team sport, and plenty of families are winning at it. The Daily Co-Parent is a warm, judgment-free corner of the internet for the parents who show up at every handoff, laugh at the chaos, and keep their kids at the center of it all.
+      </p>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink text-cream/90">
+    <div class="max-w-6xl mx-auto px-5 py-14 grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="#top" class="flex items-center gap-2.5">
+          <span class="grid place-items-center w-10 h-10 rounded-2xl bg-terracotta text-white"><i data-lucide="house-heart" class="w-5 h-5"></i></span>
+          <span class="font-display font-bold text-lg">The Daily Co-Parent</span>
+        </a>
+        <p class="mt-4 text-sm text-cream/70 max-w-xs leading-relaxed">Built with love for modern families everywhere.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" aria-label="Instagram" class="w-10 h-10 grid place-items-center rounded-full bg-white/10 hover:bg-terracotta transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="Facebook" class="w-10 h-10 grid place-items-center rounded-full bg-white/10 hover:bg-terracotta transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="YouTube" class="w-10 h-10 grid place-items-center rounded-full bg-white/10 hover:bg-terracotta transition"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+          <a href="mailto:hello@thedailycoparent.com" aria-label="Email" class="w-10 h-10 grid place-items-center rounded-full bg-white/10 hover:bg-terracotta transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-lg">Explore</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-cream/75">
+          <li><a href="#stories" class="hover:text-butter transition">Daily Stories</a></li>
+          <li><a href="#tips" class="hover:text-butter transition">Tips &amp; Tools</a></li>
+          <li><a href="#gear" class="hover:text-butter transition">Co-Parent Gear</a></li>
+          <li><a href="#about" class="hover:text-butter transition">About Us</a></li>
+          <li><a href="#newsletter" class="hover:text-butter transition">Subscribe Free</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-lg">A gentle reminder</h3>
+        <p class="mt-4 text-sm text-cream/75 leading-relaxed">You're doing better than you think. Two homes, one love, and a kid who knows it.</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/60">
+        <p>&copy; <span id="year"></span> The Daily Co-Parent. All rights reserved.</p>
+        <p class="flex gap-4">
+          <a href="#" class="hover:text-butter transition">Privacy Notice</a>
+          <a href="#" class="hover:text-butter transition">Affiliate Disclosure</a>
+        </p>
+      </div>
+      <p class="max-w-6xl mx-auto px-5 pb-6 text-xs text-cream/45">The Daily Co-Parent shares general parenting ideas and humor, not legal or professional advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Icons
+    lucide.createIcons();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Newsletter
+    const form = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('email');
+    const errorMsg = document.getElementById('formError');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim());
+      if (!valid) {
+        errorMsg.classList.remove('hidden');
+        emailInput.focus();
+        return;
+      }
+      errorMsg.classList.add('hidden');
+
+      // TODO: connect to your email provider (Mailchimp, ConvertKit, Beehiiv, etc.):
+      // fetch('YOUR_ENDPOINT', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ email: emailInput.value.trim() }) });
+
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+      success.animate([{ opacity: 0, transform: 'translateY(12px) scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: 'ease-out' });
+      lucide.createIcons();
+    });
+    emailInput.addEventListener('input', () => errorMsg.classList.add('hidden'));
+  </script>
+</body>
+</html>
